@@ -1,0 +1,36 @@
+name: Memo Append
+
+on:
+  repository_dispatch:
+    types: [memo-append]
+
+permissions:
+  contents: write
+
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Append memo entry
+        run: |
+          URL="${{ github.event.client_payload.url }}"
+          NOTE="${{ github.event.client_payload.note }}"
+          TODAY=$(date -u +%Y-%m-%d)
+          FILE="memo/inbox.md"
+
+          # Create file if it doesn't exist
+          mkdir -p "$(dirname "$FILE")"
+          touch "$FILE"
+
+          echo "" >> "$FILE"
+          echo "- ${TODAY} [${NOTE}](${URL})" >> "$FILE"
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add memo/inbox.md
+          git commit -m "memo: ${{ github.event.client_payload.note }}"
+          git push
