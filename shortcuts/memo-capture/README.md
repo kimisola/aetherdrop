@@ -24,7 +24,7 @@ The default config appends entries to `memo/inbox.md`. Edit the `FILE` variable 
 
 ### 3. Install the Shortcut
 
-[Download Memo Capture](https://www.icloud.com/shortcuts/1c7cbd1ba91648ecb141f75cedc1d63d)
+[Download Memo Capture](https://www.icloud.com/shortcuts/d7e3d762a7ab4f878a26aa465bb0612e)
 
 After installing, open the shortcut and replace the two placeholders:
 
