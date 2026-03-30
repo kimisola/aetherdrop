@@ -1,4 +1,4 @@
-# Memo Capture
+# 📮 Memo Capture
 
 iOS Shortcut that captures links and notes from any app's Share Sheet and saves them to a GitHub repo — powered by GitHub Actions.
 
@@ -24,7 +24,7 @@ The default config appends entries to `memo/inbox.md`. Edit the `FILE` variable 
 
 ### 3. Install the Shortcut
 
-[Download Memo Capture](https://www.icloud.com/shortcuts/896bd29767d94e54863b32c8059f9fe0)
+[Download Memo Capture](https://www.icloud.com/shortcuts/1c7cbd1ba91648ecb141f75cedc1d63d)
 
 After installing, open the shortcut and replace the two placeholders:
 
@@ -33,10 +33,23 @@ After installing, open the shortcut and replace the two placeholders:
 | `YOUR_GITHUB_REPO_URL` | `https://api.github.com/repos/{owner}/{repo}/dispatches` |
 | `YOUR_GITHUB_TOKEN` | The token you created in step 1 |
 
+Then enable Share Sheet access:
+
+1. Open the shortcut → tap **ⓘ** (details)
+2. Turn on **Show in Share Sheet**
+
 ## Usage
+
+### From Share Sheet
 
 1. In any app, tap **Share** → select **Memo Capture**
 2. Enter a note (or leave blank)
+3. Done — the entry is committed to your repo
+
+### From Home Screen
+
+1. Open the shortcut → tap **ⓘ** (details) → **Add to Home Screen**
+2. Tap the icon → paste a URL → enter a note
 3. Done — the entry is committed to your repo
 
 ## Customization
