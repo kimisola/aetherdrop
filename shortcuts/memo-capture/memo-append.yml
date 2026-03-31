@@ -25,7 +25,11 @@ jobs:
           touch "$FILE"
 
           echo "" >> "$FILE"
-          echo "- ${TODAY} [${NOTE}](${URL})" >> "$FILE"
+          if [ -z "$NOTE" ]; then
+            echo "- ${TODAY} ${URL}" >> "$FILE"
+          else
+            echo "- ${TODAY} [${NOTE}](${URL})" >> "$FILE"
+          fi
 
       - name: Commit and push
         run: |
