@@ -17,6 +17,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Sync to latest
+        run: git pull
+
       - name: Append memo entry
         env:
           URL: ${{ github.event.client_payload.url }}
@@ -44,5 +47,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add memo/inbox.md
           git commit -m "memo: ${NOTE}"
-          git pull --rebase
           git push
